@@ -1,82 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>نظام زخرفة النصوص المتقدم</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
 
-<body>
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+
+    <!-- لأجهزة Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- لتهيئة Windows -->
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+    <!-- ملف تهيئة متكامل (manifest.json) -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+
+  </head>
+
+  <body>
     <header class="site-header">
-        <div class="container">
-            <div class="text-center">
-                <h1><i class="fas fa-magic me-2"></i>نظام الزخرفة المتقدم للنصوص</h1>
-                <p class="mb-0 mt-2">أداة متطورة لزخرفة النصوص العربية والإنجليزية بخرائط كبيرة</p>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h1><i class="fas fa-magic me-2"></i>نظام الزخرفة المتقدم للنصوص</h1>
+          <p class="mb-0 mt-2">
+            أداة متطورة لزخرفة النصوص العربية والإنجليزية بخرائط كبيرة
+          </p>
         </div>
+      </div>
     </header>
 
     <main class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="decor-card">
-                    <div class="decor-card-header">
-                        <i class="fas fa-paint-brush me-2"></i>إدخال النص للزخرفة
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="mb-4">
-                            <label for="inputText" class="form-label fw-bold mb-3">اكتب النص المراد زخرفته:</label>
-                            <textarea class="form-control" id="inputText" rows="3"
-                                placeholder="اكتب النص هنا..."></textarea>
-                        </div>
-
-                        <div class="decor-filter">
-                            <h5><i class="fas fa-filter me-2"></i>تصفية الزخارف</h5>
-                            <div class="d-flex flex-wrap gap-2 mt-3">
-                                <button class="btn btn-outline-primary filter-btn active"
-                                    data-filter="all">الكل</button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="arabic">العربية</button>
-                                <button class="btn btn-outline-primary filter-btn"
-                                    data-filter="english">الإنجليزية</button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="special">الخاصة</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="decor-title">
-                    <i class="fas fa-star"></i>
-                    <span>أنماط الزخرفة المتاحة</span>
-                </div>
-
-                <div class="loading-indicator" id="loadingIndicator">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">جاري التحميل...</span>
-                    </div>
-                    <p class="mt-3">جاري تحميل الزخارف...</p>
-                </div>
-
-                <div class="results-grid" id="resultsContainer">
-                    <!-- سيتم إنشاء نتائج الزخرفة هنا ديناميكياً -->
-                </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="decor-card">
+            <div class="decor-card-header">
+              <i class="fas fa-paint-brush me-2 p-xl-2"></i>إدخال النص للزخرفة
             </div>
+            <div class="card-body p-4">
+              <div class="mb-4">
+                <label for="inputText" class="form-label fw-bold mb-3"
+                  >اكتب النص المراد زخرفته:</label
+                >
+                <textarea
+                  class="form-control"
+                  id="inputText"
+                  rows="3"
+                  placeholder="اكتب النص هنا..."
+                ></textarea>
+              </div>
+
+              <div class="decor-filter">
+                <h5><i class="fas fa-filter me-2"></i>تصفية الزخارف</h5>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                  <button
+                    class="btn btn-outline-primary filter-btn active"
+                    data-filter="all"
+                  >
+                    الكل
+                  </button>
+                  <button
+                    class="btn btn-outline-primary filter-btn"
+                    data-filter="arabic"
+                  >
+                    العربية
+                  </button>
+                  <button
+                    class="btn btn-outline-primary filter-btn"
+                    data-filter="english"
+                  >
+                    الإنجليزية
+                  </button>
+                  <button
+                    class="btn btn-outline-primary filter-btn"
+                    data-filter="special"
+                  >
+                    الخاصة
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="decor-title">
+            <i class="fas fa-star"></i>
+            <span>أنماط الزخرفة المتاحة</span>
+          </div>
+
+          <div class="results-grid" id="resultsContainer">
+            <!-- سيتم إنشاء نتائج الزخرفة هنا ديناميكياً -->
+          </div>
         </div>
+      </div>
     </main>
 
-
     <footer class="footer">
-        <div class="container">
-            <p>جميع الحقوق محفوظة &copy; <span id="currentYear"></span> - نظام الزخرفة المتقدم</p>
-            <p class="mb-0">تم التطوير باستخدام أحدث تقنيات JavaScript</p>
-        </div>
+      <div class="container">
+        <p>
+          جميع الحقوق محفوظة &copy; <span id="currentYear"></span> - نظام
+          الزخرفة المتقدم
+        </p>
+        <p class="mb-0">تم التطوير بواسطه : Hayyan</p>
+      </div>
     </footer>
     <script src="data.js"></script>
     <script src="decoration.js"></script>
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>
