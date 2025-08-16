@@ -216,6 +216,24 @@ document.addEventListener("DOMContentLoaded", function () {
       category: "english21",
     },
     {
+      id: "english22",
+      name: "زخارف إنجليزية",
+      icon: "fas fa-globe",
+      category: "english22",
+    },
+    {
+      id: "english23",
+      name: "زخارف إنجليزية",
+      icon: "fas fa-globe",
+      category: "english23",
+    },
+    {
+      id: "english24",
+      name: "زخارف إنجليزية",
+      icon: "fas fa-globe",
+      category: "english24",
+    },
+    {
       id: "special",
       name: "زخارف خاصة",
       icon: "fas fa-star",
@@ -331,7 +349,10 @@ document.addEventListener("DOMContentLoaded", function () {
             cat === "english18" ||
             cat === "english19" ||
             cat === "english20" ||
-            cat === "english21";
+            cat === "english21" ||
+            cat === "english22" ||
+            cat === "english23" ||
+            cat === "english24";
         } else {
           show = cat === filter;
         }
@@ -340,4 +361,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+  // دالة لتحديد السنة الحالية في الفوتر
+  const currentYear = document.getElementById("currentYear");
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear().toString();
+  }
 });
